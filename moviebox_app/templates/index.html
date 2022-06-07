@@ -1,0 +1,10 @@
+{% for o in obj %}
+
+{{o.title}}<br/>
+<img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}"><br/>
+설명<br>{{o.overview}}<br/>
+개봉일 {{o.release_date}}<br/>
+평점 {{o.vote_average}}<br/>
+id {{o.id}}<br/>
+<br><br/>
+{% endfor %}
