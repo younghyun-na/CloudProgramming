@@ -11,5 +11,3 @@ def home(request):
     obj = json.loads(movieData)
     obj = obj['results']
     return render(request, 'index.html', {'obj': obj})
-
-
