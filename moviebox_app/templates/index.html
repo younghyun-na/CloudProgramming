@@ -1,5 +1,6 @@
 {% for o in obj %}
 
+<a href ="{% url 'detail' o.id %}"> 영화 상세보기 </a>
 {{o.title}}<br/>
 <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}"><br/>
 설명<br>{{o.overview}}<br/>
