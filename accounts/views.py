@@ -19,3 +19,7 @@ def login(request):
     # 로그인 폼 (GET 요청)
     else:
         return render(request, 'login.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('home')

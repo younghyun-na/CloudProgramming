@@ -10,4 +10,5 @@ urlpatterns = [
     path('detail/<str:movie_id>', views.detail, name="detail"),
 
     path('login/', accounts_views.login, name='login'),
+    path('logout/', accounts_views.logout, name='logout'),
 ]
