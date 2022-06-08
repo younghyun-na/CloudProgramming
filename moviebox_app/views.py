@@ -30,6 +30,7 @@ def home(request):
         context = {'movie_list': movie_list, 'form': form}
         return render(request, 'index.html', context)
 
+
 # 영화 정보 상세페이지
 def detail(request, movie_id):
     url = 'https://api.themoviedb.org/3/movie/' + movie_id + '?api_key=' + my_id
