@@ -1,4 +1,5 @@
 from django.contrib import auth
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 
@@ -6,9 +7,9 @@ def login(request):
     # 로그인 시키기 (POST 요청)
     if request.method == "POST":
 
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = auth.authenticate(request, username=username, password=password)
+        user_id = request.POST['user_id']
+        user_pw = request.POST['user_pw']
+        user = auth.authenticate(request, user_id = user_id , user_pw=user_pw)
 
         if user is not None:
             auth.login(request, user)
@@ -23,3 +24,4 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
