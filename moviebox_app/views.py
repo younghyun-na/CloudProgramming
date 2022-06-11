@@ -36,4 +36,4 @@ def detail(request, movie_id):
     url = 'https://api.themoviedb.org/3/movie/' + movie_id + '?api_key=' + my_id
     response = requests.get(url)
     movieData = response.text
-    return render(request, 'detail.html', {'movieData': movieData})
+    return render(request, 'detail1.html', {'movieData': movieData})

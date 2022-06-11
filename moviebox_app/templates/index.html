@@ -52,6 +52,7 @@
           <li><a class="nav-link scrollto " href="#portfolio">Weekly Trend</a></li>
           <li><a class="nav-link scrollto" href="#search">Search</a></li>
           <li><a href="blog.html">Review</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -71,7 +72,7 @@
 
   <main id="main">
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= Weekly Trend Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
 
@@ -90,19 +91,18 @@
         </div>
 
         <div class="row portfolio-container">
-
+          {% for o in movie_list %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            {% for o in movie_list %}
             <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>{{o.title}}</h4>
-              <p>{{o.release_date}}</p>
-              <p>{{o.vote_average}}</p>
-              <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="detail.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <p>개봉일 {{o.release_date}}</p>
+              <p>평점 {{o.vote_average}}</p>
+<!--              <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
+              <a href="{% url 'detail' o.id %}"  class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
-            {% endfor %}
           </div>
+          {% endfor %}
 
         </div>
       </div>
@@ -110,16 +110,74 @@
     <!-- End Portfolio Section -->
 
     <!-- ======= Search Section ======= -->
-    <section id="search" class="search">
+    <section id="cta" class="cta">
       <div class="container">
-        <div class="col-lg-4 col-md-6 footer-newsletter">
-          <form action="" method="post">
-            <input type="email" name="email"><input type="submit" value="Subscribe">
-          </form>
+        <div class="text-center">
+          <h3>Search</h3>
+           <form action="" method="post">
+            <input type="text" name="text">
+             <p>
+               <a class="cta-btn" type="submit" value="Search" href="#">Search</a>
+             </p>
+           </form>
         </div>
+
       </div>
     </section>
+    <!-- End Search Section -->
 
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <h3>The people <span> Created the project</span></h3>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/person-1.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>나영현</h4>
+                <span>Student - Project Developer</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/person-2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>한종대 교수님</h4>
+                <span>Professor</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -130,7 +188,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Tempo</h3>
+            <h3>MovieBox</h3>
             <p>
               A108 Adam Street <br>
               New York, NY 535022<br>
@@ -141,36 +199,22 @@
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Weekly Trend</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Search</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Review</a></li>
             </ul>
           </div>
 
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
-
         </div>
       </div>
     </div>
@@ -214,4 +258,13 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
 
