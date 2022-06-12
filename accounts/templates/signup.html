@@ -1,18 +1,18 @@
 <div class="wrapper" style="text-align: center;">
-    <h1>회원가입</h1>
+    <h1>Signup</h1>
     <form method="POST">
         {% csrf_token %}
-        아이디: <br>
-        <input name="user_id" type="text">
-        <br>
-        비밀번호: <br>
-        <input name="user_pw" type="password">
-        <br>
-        비밀번호 확인: <br>
-        <input name="repeat_pw" type="password">
-        <br>
-        이메일: <br>
-        <input name="email" type="email">
+        이메일<br>
+        <input name="email" type="email" placeholder="email">
+        <br><br>
+        아이디<br>
+        <input name="user_id" type="text" placeholder="id">
+        <br><br>
+        비밀번호<br>
+        <input name="user_pw" type="password" placeholder="password">
+        <br><br>
+        비밀번호 확인<br>
+        <input name="repeat_pw" type="password" placeholder="repeat password">
         <br><br>
         <input type="submit" class="btn btn-primary" value="Sign Up">
     </form>
