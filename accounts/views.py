@@ -35,5 +35,7 @@ def signup(request):
             signup_user = User.objects.create_user(user_id, user_pw, email)
             auth.login(request, signup_user)
             return redirect('home')
+        return render(request, 'failed1.html')
+    else:
         return render(request, 'signup.html')
-    return render(request, 'signup.html')
+
