@@ -86,6 +86,7 @@
               <li data-filter="*" class="filter-active">전체</li>
               <li data-filter=".filter-app">개봉일 순</li>
               <li data-filter=".filter-card">별점 순</li>
+              <li data-filter=".filter-web">Web</li>
             </ul>
           </div>
         </div>
@@ -99,7 +100,7 @@
               <p>개봉일 {{o.release_date}}</p>
               <p>평점 {{o.vote_average}}</p>
 <!--              <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
-              <a href="{% url 'detail' o.id %}"  class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'detail' o.id %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
           {% endfor %}
@@ -117,7 +118,7 @@
            <form action="" method="post">
             <input type="text" name="text">
              <p>
-               <a class="cta-btn" type="submit" value="Search" href="#">Search</a>
+               <a class="cta-btn" type="submit" value="Search" href="{% url 'movie_list' o.id }">Search</a>
              </p>
            </form>
         </div>

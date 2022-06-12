@@ -1,0 +1,30 @@
+<main>
+<!-- ======= Weekly Trend Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Search Movies</h2>
+        </div>
+
+
+        <div class="row portfolio-container">
+          {% for o in movie_list %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>{{o.title}}</h4>
+              <p>개봉일 {{o.release_date}}</p>
+              <p>평점 {{o.vote_average}}</p>
+<!--              <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
+              <a href="{% url 'detail' o.id %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
+</main>
+
