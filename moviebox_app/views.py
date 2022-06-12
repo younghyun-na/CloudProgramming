@@ -26,7 +26,7 @@ def home(request):
         response = requests.get(url)
         movieData = response.text
         movie_list = json.loads(movieData)
-        movie_list = movie_list ['results']
+        movie_list = movie_list['results']
         context = {'movie_list': movie_list, 'form': form}
         return render(request, 'index.html', context)
 

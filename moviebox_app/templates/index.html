@@ -50,8 +50,8 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Weekly Trend</a></li>
-          <li><a class="nav-link scrollto" href="#cto">Search</a></li>
-          <li><a href="blog.html">Review</a></li>
+<!--          <li><a class="nav-link scrollto" href="#cto">Search</a></li>-->
+          <li><a href="{% url 'login' %}">Review</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -110,17 +110,16 @@
     </section>
     <!-- End Portfolio Section -->
 
-    <!-- ======= Search Section ======= -->
+   <!-- ======= Search Section ======= -->
     <section id="cto" class="cta">
       <div class="container">
         <div class="text-center">
           <h3>Search</h3>
-           <form action="" method="post">
-            <input type="text" name="text">
-             <p>
-               <a class="cta-btn" type="submit" value="Search" href="{% url 'movie_list' o.id }">Search</a>
-             </p>
-           </form>
+          <form action="" method="POST">
+            {%csrf_token %}
+            {{form}}
+            <input type="submit"  value="submit"></a>
+          </form>
         </div>
 
       </div>

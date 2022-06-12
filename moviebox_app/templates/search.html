@@ -11,7 +11,174 @@ id {{o.id}}<br/>
 {% endfor %}
 
 <form action="" method="POST">
-    <{%csrf_token %}
+    {%csrf_token %}
     {{form}}
     <input type="submit" value="submit">
 </form>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns="http://www.w3.org/1999/html">-->
+
+<!--<head>-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta content="width=device-width, initial-scale=1.0" name="viewport">-->
+
+<!--  <title>MovieBox</title>-->
+<!--  <meta content="" name="description">-->
+<!--  <meta content="" name="keywords">-->
+
+<!--  {% load static %}-->
+<!--  &lt;!&ndash; Favicons &ndash;&gt;-->
+<!--  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">-->
+<!--  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">-->
+
+<!--  &lt;!&ndash; Google Fonts &ndash;&gt;-->
+<!--  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">-->
+
+<!--  &lt;!&ndash; Vendor CSS Files &ndash;&gt;-->
+<!--  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}"rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/remixicon/remixicon.css'%}" rel="stylesheet">-->
+<!--  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">-->
+
+<!--  &lt;!&ndash; Template Main CSS File &ndash;&gt;-->
+<!--  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">-->
+
+<!--  &lt;!&ndash; =======================================================-->
+<!--  * Template Name: Tempo - v4.7.0-->
+<!--  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/-->
+<!--  * Author: BootstrapMade.com-->
+<!--  * License: https://bootstrapmade.com/license/-->
+<!--  ======================================================== &ndash;&gt;-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--  &lt;!&ndash; ======= Header ======= &ndash;&gt;-->
+<!--  <header id="header" class="fixed-top ">-->
+<!--    <div class="container d-flex align-items-center justify-content-between">-->
+
+<!--      <h1 class="logo"><a href="index.html">MovieBox</a></h1>-->
+<!--      &lt;!&ndash; Uncomment below if you prefer to use an image logo &ndash;&gt;-->
+<!--      &lt;!&ndash; <a href="index1.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>&ndash;&gt;-->
+
+<!--      <nav id="navbar" class="navbar">-->
+<!--        <ul>-->
+<!--          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>-->
+<!--          <li><a class="nav-link scrollto " href="#portfolio">Weekly Trend</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#cto">Search</a></li>-->
+<!--          <li><a href="blog.html">Review</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#team">Team</a></li>-->
+<!--        </ul>-->
+<!--        <i class="bi bi-list mobile-nav-toggle"></i>-->
+<!--      </nav>&lt;!&ndash; .navbar &ndash;&gt;-->
+
+<!--    </div>-->
+<!--  </header>&lt;!&ndash; End Header &ndash;&gt;-->
+
+<!--  &lt;!&ndash; ======= Hero Section ======= &ndash;&gt;-->
+<!--  <section id="hero">-->
+<!--    <div class="hero-container">-->
+<!--      <h3>Welcome to <strong>MovieBox</strong></h3>-->
+<!--      <h1>Let's enjoy the movie together</h1>-->
+<!--      <h2>영화 정보를 제공하고 리뷰를 나누는 서비스입니다</h2>-->
+<!--      <a href="{% url 'login' %}" class="btn-get-started scrollto">Start with Login</a>-->
+<!--    </div>-->
+<!--  </section>&lt;!&ndash; End Hero &ndash;&gt;-->
+
+<!--  <main id="main">-->
+
+<!--    &lt;!&ndash; ======= Weekly Trend Section ======= &ndash;&gt;-->
+<!--    <section id="portfolio" class="portfolio">-->
+<!--      <div class="container">-->
+
+<!--        <div class="section-title">-->
+<!--          <h2>Weekly Trend Movies</h2>-->
+<!--        </div>-->
+
+
+<!--        <div class="row portfolio-container">-->
+<!--          {% for o in movie_list %}-->
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--            <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" class="img-fluid" alt="">-->
+<!--            <div class="portfolio-info">-->
+<!--              <h4>{{o.title}}</h4>-->
+<!--              <p>개봉일 {{o.release_date}}</p>-->
+<!--              <p>평점 {{o.vote_average}}</p>-->
+<!--&lt;!&ndash;              <img src="https://image.tmdb.org/t/p/w500/{{o.backdrop_path}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>&ndash;&gt;-->
+<!--              <a href="{% url 'detail' o.id %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          {% endfor %}-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    &lt;!&ndash; End Portfolio Section &ndash;&gt;-->
+<!--  </main>-->
+
+<!--  &lt;!&ndash; ======= Footer ======= &ndash;&gt;-->
+<!--  <footer id="footer">-->
+
+<!--    <div class="container d-md-flex py-4">-->
+
+<!--      <div class="me-md-auto text-center text-md-start">-->
+<!--        <div class="copyright">-->
+<!--          &copy; Copyright <strong><span>Bethany</span></strong>. All Rights Reserved-->
+<!--        </div>-->
+<!--        <div class="credits">-->
+<!--          &lt;!&ndash; All the links in the footer should remain intact. &ndash;&gt;-->
+<!--          &lt;!&ndash; You can delete the links only if you purchased the pro version. &ndash;&gt;-->
+<!--          &lt;!&ndash; Licensing information: https://bootstrapmade.com/license/ &ndash;&gt;-->
+<!--          &lt;!&ndash; Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/ &ndash;&gt;-->
+<!--          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="social-links text-center text-md-right pt-3 pt-md-0">-->
+<!--        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>-->
+<!--        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>-->
+<!--        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>-->
+<!--        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+<!--        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </footer>&lt;!&ndash; End Footer &ndash;&gt;-->
+
+<!--  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>-->
+
+<!--  &lt;!&ndash; Vendor JS Files &ndash;&gt;-->
+<!--  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>-->
+<!--  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>-->
+
+<!--  &lt;!&ndash; Template Main JS File &ndash;&gt;-->
+<!--  <script src="{% static 'assets/js/main.js' %}"></script>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
