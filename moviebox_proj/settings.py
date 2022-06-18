@@ -28,12 +28,13 @@ INSTALLED_APPS = [
     'moviebox_app',
     'moviebox_proj',
     'accounts',
+    'review',
 
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google'
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google'
 ]
 SITE_ID = 1
 

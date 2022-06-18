@@ -10,7 +10,7 @@ def login(request):
         user_id = request.POST['user_id']
         user_pw = request.POST['user_pw']
 
-        user = auth.authenticate(request, username = user_id , password=user_pw)
+        user = auth.authenticate(request, username=user_id, password=user_pw)
 
         if user is not None:
             auth.login(request, user)
@@ -35,7 +35,7 @@ def signup(request):
             signup_user = User.objects.create_user(user_id, user_pw, email)
             auth.login(request, signup_user)
             return redirect('home')
-        return render(request, 'failed1.html')
-    else:
-        return render(request, 'signup.html')
+        else:
+            return render(request, 'failed1.html')
+    return render(request, 'signup.html')
 
