@@ -7,11 +7,11 @@
       <div class="container">
 
         <ol>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="post_list.html">영화 추천 게시판</a></li>
-          <li>Blog Single</li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'post_list' %}">영화 추천 게시판</a></li>
+          <li>게시물</li>
         </ol>
-        <h2>Blog Single</h2>
+        <h2>게시물</h2>
 
       </div>
     </section>
@@ -24,10 +24,6 @@
           <div class="col-lg-8 entries">
 
             <article class="entry entry-single">
-
-              <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
 
               <h2 class="entry-title">{{ post_detail.title }}</h2>
               <div class="entry-meta">

@@ -17,6 +17,7 @@
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
+      {% if user.is_authenticated %}
       <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <a href="{% url 'post_form' %}" class="btn btn-outline-danger">
           <span class="icon text-white-50">
@@ -25,6 +26,7 @@
           <span class="text">글쓰기</span>
         </a>
       </div>
+      {% endif %}
       <br><br>
       <div class="container" data-aos="fade-up">
 
