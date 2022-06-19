@@ -1,3 +1,17 @@
-회원 가입 실패
-<br/>
-<a href="{% url 'signup' %}">Signup</a>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main id="main">
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" style="text-align: center;">
+          <h2><strong>회원가입 실패</strong></h2><br><br>
+            <a href="{% url 'signup' %}"><strong>회원가입을 재시도하시겠습니까</strong>?</a>
+            <br><br>
+            <a href="{% url 'signup' %}">Join</a>
+        </div>
+      </div>
+    </section>
+</main>
+{% endblock %}

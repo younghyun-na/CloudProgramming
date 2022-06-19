@@ -1,3 +1,17 @@
-로그인 실패
-<br/>
-<a href="{% url 'login' %}">Login</a>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main id="main">
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" style="text-align: center;">
+          <h2><strong>로그인 실패</strong></h2><br><br>
+            <a class="small" href="{% url 'login' %}"><strong>재 로그인을 하시겠습니까</strong>?</a>
+            <br><br>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+      </div>
+    </section>
+</main>
+{% endblock %}
