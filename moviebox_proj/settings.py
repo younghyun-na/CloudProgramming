@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'moviebox_app',
     'moviebox_proj',
     'accounts',
-    'review',
+    'board',
 
     'django.contrib.sites',
     'allauth',
