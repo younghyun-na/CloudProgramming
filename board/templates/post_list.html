@@ -38,9 +38,6 @@
             <article class="entry">
 
               {% for post in posts %}
-              <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
 
               <h2 class="entry-title">
                 <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
@@ -50,13 +47,13 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{post.movie_name}}</a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i>{{post.author}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>{{post.created_at}}/a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>{{post.updated_at}}</li>
                 </ul>
               </div>
 
               <div class="entry-content">
                 <p>
-                 {{post.content}}
+                 {{ post.content | truncatechars:150 }}
                 </p>
                 <div class="read-more">
                   <a href="{% url 'post_detail' post.id %}">Read More</a>
