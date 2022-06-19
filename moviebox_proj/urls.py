@@ -17,4 +17,7 @@ urlpatterns = [
     path('posts/', board_views.postlist, name='post_list'),
     path('posts/add', board_views.addpost, name='post_form'),
     path('posts/<int:post_id>', board_views.postdetail, name='post_detail'),
+    path('posts/<int:post_id>/modify', board_views.postmodify, name='post_modify'),
+    path('posts/<int:post_id>/delete', board_views.postdelete, name='post_delete'),
 ]
+

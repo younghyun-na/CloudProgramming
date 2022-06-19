@@ -9,9 +9,9 @@
         <ol>
           <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'post_list' %}">영화 추천 게시판</a></li>
-          <li>게시물</li>
+          <li>게시글</li>
         </ol>
-        <h2>게시물</h2>
+        <h2>게시글</h2>
 
       </div>
     </section>
@@ -29,14 +29,20 @@
               <div class="entry-meta">
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{post_detail.movie_name}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i>작성자</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>작성날짜</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i>{{post_detail.author}}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>{{post_detail.created_at}}</a></li>
                 </ul>
               </div>
               <div class="entry-content">
                 <p>
                  {{post_detail.content}}
                 </p>
+
+                <div class="read-more">
+                  <a href="{% url 'post_modify' post_detail.id %}" >수정</a>
+                  <a href="{% url 'post_delete' post_detail.id %}">삭제</a>
+                </div>
+
               </div>
             </article>
           </div><!-- End blog entries list -->
