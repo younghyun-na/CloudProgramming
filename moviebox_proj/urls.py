@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from moviebox_app import views
 from accounts import views as accounts_views
 from board import views as board_views
@@ -14,6 +14,7 @@ urlpatterns = [
     path('login/', accounts_views.login, name='login'),
     path('logout/', accounts_views.logout, name='logout'),
     path('signup/', accounts_views.signup, name='signup'),
+    path('accounts/', include('allauth.urls')),
 
     path('posts/', board_views.postlist, name='post_list'),
     path('posts/add', board_views.addpost, name='post_form'),

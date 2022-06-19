@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+{% load socialaccount %}
 <main id="main">
 
     <!-- ======= Weekly Trend Section ======= -->
@@ -21,6 +22,8 @@
                 <input type="submit" class="btn btn-outline-danger" value="Login">
                 <br>
             </form>
+            <br>
+            <a role="button" class="btn btn-outline-danger" href="{% provider_login_url 'google' %}">Google Login</a>
             <br><br>
             <a class="small" href="{% url 'signup' %}">Create an Account!</a>
         </div>
