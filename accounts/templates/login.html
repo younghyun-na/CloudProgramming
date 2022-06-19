@@ -1,20 +1,34 @@
-<div class="wrapper" style="text-align: center;">
-    <h1>Login</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <br>
-        <input name="user_id" type="text" placeholder="id">
-        <br>
-        <br>
-        <input name="user_pw" type="password" placeholder="password">
-        <br>
-        <br>
-        <input type="submit" class="btn btn-primary" value="Sign Up">
-        <br>
-    </form>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main id="main">
 
-    <a class="small" href="{% url 'signup' %}">Create an Account!</a>
-</div>
+    <!-- ======= Weekly Trend Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" style="text-align: center;">
+          <h2>로그인</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <br>
+                <input name="user_id" type="text" placeholder="id">
+                <br>
+                <br>
+                <input name="user_pw" type="password" placeholder="password">
+                <br>
+                <br>
+                <input type="submit" class="btn btn-outline-danger" value="Sign Up">
+                <br>
+            </form>
+            <br><br>
+            <a class="small" href="{% url 'signup' %}">Create an Account!</a>
+        </div>
+      </div>
+    </section>
+</main>
+{% endblock %}
+
 
 
 
