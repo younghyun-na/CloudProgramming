@@ -13,7 +13,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'[{self.pk}]  [{self.title}] :: {self.author}'
+        return f' [{self.title}] :: {self.author}'
 
-    def get_absolute_url(self):
-        return f'/review/{self.pk}/'
+    # def get_absolute_url(self):
+    #     return f'/post/{self.pk}/'

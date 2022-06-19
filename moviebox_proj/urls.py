@@ -15,5 +15,6 @@ urlpatterns = [
     path('signup/', accounts_views.signup, name='signup'),
 
     path('posts/', board_views.postlist, name='post_list'),
-
+    path('posts/add', board_views.addpost, name='post_form'),
+    path('posts/<int:post_id>', board_views.postdetail, name='post_detail'),
 ]
