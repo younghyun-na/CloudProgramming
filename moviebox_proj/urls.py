@@ -1,8 +1,9 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from moviebox_app import views
 from accounts import views as accounts_views
 from board import views as board_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

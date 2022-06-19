@@ -30,18 +30,19 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{post_detail.movie_name}}</a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i>{{post_detail.author}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>{{post_detail.created_at}}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>{{post_detail.updated_at}}</a></li>
                 </ul>
               </div>
               <div class="entry-content">
                 <p>
                  {{post_detail.content}}
                 </p>
-
+                {% if request.user == post_detail.author %}
                 <div class="read-more">
                   <a href="{% url 'post_modify' post_detail.id %}" >수정</a>
                   <a href="{% url 'post_delete' post_detail.id %}">삭제</a>
                 </div>
+                {% endif %}
 
               </div>
             </article>
