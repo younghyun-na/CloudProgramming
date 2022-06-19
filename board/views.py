@@ -35,6 +35,7 @@ def postmodify(request, post_id):
         form = PostForm(request.POST, instance=post_modify)
         if form.is_valid():
             post_modify = form.save(commit=False)
+            post_modify.updated_at = datetime.now()
             post_modify.save()
             return redirect('post_detail', post_id=post_modify.pk)
     else:
