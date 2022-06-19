@@ -11,8 +11,11 @@ def addpost(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            unfinished = form.save(commit=False)
+            unfinished.author = request.user
+            unfinished.save()
             form.save()
-            return redirect('post_list.html')
+            return redirect('post_list')
     else:
         form = PostForm()
     return render(request, 'post_form.html', {'form': form})

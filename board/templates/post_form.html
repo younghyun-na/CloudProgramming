@@ -1,14 +1,48 @@
-<div class="wrapper">
-    <title>리뷰 작성</title>
-    <h1>Create Post</h1>
-    <form method="post" enctype="multipart/form-data">
-        {%  csrf_token %}
-        <table>
-            {{form}}
-        </table>
-        <button type="submit" class="btn btn-primary float-right">Submit</button>
-    </form>
-</div>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main id="main">
 
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
 
+        <ol>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'post_list' %}">영화 추천 게시판</a></li>
+          <li>게시글 작성</li>
+        </ol>
+        <h2>게시글 작성</h2>
+
+      </div>
+    </section>
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry entry-single">
+
+              <h2 class="entry-title">{{ post_detail.title }}</h2>
+              <div class="entry-meta">
+                <ul>
+                  <form method="post" enctype="multipart/form-data">
+                      {%  csrf_token %}
+                      <table>
+                          {{form}}
+                      </table>
+                      <br><br>
+                      <button type="submit" class="btn btn-outline-danger">Submit</button>
+                  </form>
+                </ul>
+              </div>
+            </article>
+          </div><!-- End blog entries list -->
+        </div>
+      </div>
+    </section><!-- End Blog Single Section -->
+</main><!-- End #main -->
+{% endblock %}
 
